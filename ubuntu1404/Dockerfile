@@ -13,3 +13,5 @@ RUN set -ex; \
  && rm -rf /var/lib/apt/lists/*
 
 RUN easy_install pip
+
+RUN pip install --no-cache ansible==2.3.0.0
