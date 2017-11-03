@@ -8,7 +8,7 @@ RUN set -ex; \
       libffi-dev \
       python \
       python-dev \
-      python-setuptools; \
-    easy_install pip
+      python-setuptools \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN rm -rf /var/lib/apt/lists/*
+RUN easy_install pip
