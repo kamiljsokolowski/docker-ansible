@@ -3,6 +3,7 @@ LABEL maintainer="KamilSokolowski@finastra.com"
 
 RUN set -ex; \
     apt-get update -q && apt-get install -y \
+      curl \
       build-essential \
       libssl-dev \
       libffi-dev \
