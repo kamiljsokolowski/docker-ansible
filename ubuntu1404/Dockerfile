@@ -20,3 +20,6 @@ RUN mkdir -p /etc/ansible/
 
 RUN echo "[local]" |tee -a /etc/ansible/hosts && \
     echo "localhost" |tee -a /etc/ansible/hosts
+
+RUN mkdir -p /ansible/
+WORKDIR /ansible
