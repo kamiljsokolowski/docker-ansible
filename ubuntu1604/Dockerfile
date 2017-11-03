@@ -15,3 +15,5 @@ RUN set -ex; \
 RUN easy_install pip
 
 RUN pip install --no-cache ansible==2.3.0.0
+
+RUN mkdir -p /etc/ansible/
