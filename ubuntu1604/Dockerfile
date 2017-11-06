@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 LABEL maintainer="KamilSokolowski@finastra.com"
 
+ARG ansible_version="2.3.0.0"
+
 RUN set -ex; \
     apt-get update -q && apt-get install -y \
       curl \
@@ -14,7 +16,7 @@ RUN set -ex; \
 
 RUN easy_install pip
 
-RUN pip install --no-cache ansible==2.3.0.0
+RUN pip install --no-cache ansible==$ansible_version
 
 RUN mkdir -p /etc/ansible/
 

@@ -6,7 +6,7 @@ def docker_image = [
     name: "ansible",
     tag: "",
     additional_tags_list: ["latest"],
-    build_args: "",
+    build_args: "--build-arg ansible_version=${ansible_version}",
     build_path: "",
     registry_list: ["registry.misys.global.ad"]
 ]
