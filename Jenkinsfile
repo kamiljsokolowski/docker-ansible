@@ -20,7 +20,7 @@ if ((env.BRANCH_NAME == 'master')) {
 
 def build_images = [:]
 for (image in images) {
-    stash includes: image + "/*", name = image + "_image_build_directory"
+    stash includes: image + "/*", image + "_image_build_directory"
     docker_image.tag = image + "-" + ansible_version
     docker_image.build_path = image
 
