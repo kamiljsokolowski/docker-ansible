@@ -89,6 +89,15 @@ for (image in images) {
     parallel build_images
 }
 
+def docker_image = [
+    name: "ansible",
+    tag: "",
+    additional_tags_list: ["latest"],
+    build_args: "",
+    build_path: "",
+    registry_list: ["registry.misys.global.ad"]
+]
+
 def tag_docker_image(image,registry,image_tag) {
     untagged_image = image.substring(0, image.indexOf(":"))
     sh "docker tag ${image} ${registry}/${untagged_image}:${image_tag}"
