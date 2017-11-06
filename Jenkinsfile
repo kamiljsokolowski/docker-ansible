@@ -20,7 +20,6 @@ if ((env.BRANCH_NAME == 'master')) {
 
 def build_images = [:]
 for (image in images) {
-    stash includes: image + "/*", image + "_image_build_directory"
     docker_image.tag = image + "-" + ansible_version
     docker_image.build_path = image
 
@@ -29,12 +28,14 @@ for (image in images) {
             deleteDir()
             currentBuild.result = 'SUCCESS'
 
-            unstash image + "_image_build_directory"
-
             try {
+                stage ("checkout") {
+                    checkout scm
+                }
+
                 stage ("build") {
                     timeout(time: 20, unit: 'MINUTES') {
-                        container = docker.build(docker_image.name + ':' + docker_image.tag, "${docker_image.build_args} ./")
+                        container = docker.build(docker_image.name + ':' + docker_image.tag, "${docker_image.build_args} -f ./${docker_image.build_path}/Dockerfile ./${docker_image.build_path}/")
                     }
                 }
 
