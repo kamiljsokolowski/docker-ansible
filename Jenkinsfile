@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def images = ["ubuntu1404","ubuntu1604"]
-def ansible_version = 2.3.0.0
+def ansible_version = "2.3.0.0"
 if ((env.BRANCH_NAME == 'master')) {
     deploy = true
 } else {
