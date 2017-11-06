@@ -21,7 +21,7 @@ if ((env.BRANCH_NAME == 'master')) {
 def build_images = [:]
 for (image in images) {
     docker_image.tag = image + "-" + ansible_version
-    docker_image.path = image
+    docker_image.build_path = image
 
     build_images[image] = {
         node("docker-build") {
