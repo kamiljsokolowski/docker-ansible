@@ -2,14 +2,6 @@
 
 def images = ["ubuntu1404","ubuntu1604"]
 def ansible_version = "2.3.0.0"
-def docker_image = [
-    name: "ansible",
-    tag: "",
-    additional_tags_list: ["latest"],
-    build_args: "",
-    build_path: "",
-    registry_list: ["registry.misys.global.ad"]
-]
 if ((env.BRANCH_NAME == 'master')) {
     deploy = true
 } else {
@@ -19,8 +11,8 @@ if ((env.BRANCH_NAME == 'master')) {
 
 def build_images = [:]
 for (image in images) {
-    def docker_image.tag = image + "-" + ansible_version
-    def docker_image.path = image
+    docker_image.tag = image + "-" + ansible_version
+    docker_image.path = image
 
     build_images[image] = {
         node("docker-build") {
