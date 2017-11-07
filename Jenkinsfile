@@ -3,7 +3,7 @@
 def images = ["ubuntu1404","ubuntu1604"]
 def ansible_version = "2.3.0.0"
 def docker_image = [
-    name: "ansible",
+    name: "misys-common/ansible",
     tag: "",
     additional_tags_list: ["latest"],
     build_args: "--build-arg ansible_version=${ansible_version}",
