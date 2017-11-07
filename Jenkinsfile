@@ -5,7 +5,7 @@ def ansible_version = "2.3.0.0"
 def docker_image = [
     name: "misys-common/ansible",
     tag: "",
-    additional_tags_list: ["latest"],
+    additional_tags_list: [],
     build_args: "--build-arg ansible_version=${ansible_version}",
     build_path: "",
     registry_list: ["registry.misys.global.ad"]
@@ -21,6 +21,7 @@ if ((env.BRANCH_NAME == 'master')) {
 def build_images = [:]
 for (image in images) {
     docker_image.tag = image + "-" + ansible_version
+    docker_image.additional_tags_list = ["${image}-latest"]
     docker_image.build_path = image
 
     build_images[image] = {
