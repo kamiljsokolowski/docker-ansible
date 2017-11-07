@@ -25,12 +25,12 @@ vagrant ssh
 ```
 
 ## Build
-**NOTE**: commands found bellow are to be executed inside the build env
-Default
+**NOTE**: commands found bellow are to be executed inside the build env    
+Default:
 ```
 docker build --no-cache=true -t ansible:ubuntu1604-2.3.0.0 -f ubuntu1604/Dockerfile .
 ```
-Custom Ansible version.
+Custom Ansible version:
 ```
 docker build --no-cache=true --build-arg ansible_version=2.4.0.0 -t ansible:ubuntu1604-2.4.0.0 -f ubuntu1604/Dockerfile .
 ```
