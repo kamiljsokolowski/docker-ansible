@@ -40,7 +40,7 @@ for (image in images) {
                 }
 
                 stage ("test: smoke") {
-                    docker.image(docker_image.name + ':' + docker_image.tag).withRun("--name=${docker_image.name}") {c ->
+                    docker.image(docker_image.name + ':' + docker_image.tag).withRun("--name=${docker_image.name.substring(docker_image.name.indexOf("/")+1)}") {c ->
                         sh "docker logs ${c.id}"
                     }
                 }
