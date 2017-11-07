@@ -1,17 +1,17 @@
 # README.md
-# Packer template: Docker machine build server
+# Docker: Ansible
 
 Ansible Docker images.
 
 ## Requirements
-- [Docker](https://www.docker.com/get-docker): 17.09.0+
-*(optional)*
+- [Docker](https://www.docker.com/get-docker): 17.09.0+    
+*(optional)*    
 - [VBox](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html): 5.1+
 - [Vagrant](https://www.vagrantup.com/downloads.html): 1.9+
 
 ## Available OS platforms
-- Ubuntu: 14.04,16.04
-*(comming soon)*
+- Ubuntu: 14.04,16.04    
+*(comming soon)*    
 - *RedHat/CentOS: 6,7*
 - *Windows Sever 2016*
 
