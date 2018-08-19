@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-LABEL maintainer="KamilSokolowski@finastra.com"
+FROM ubuntu:18.04
+LABEL maintainer="kamil.j.sokolowski@gmail.com"
 
 ARG ansible_version="2.3.0.0"
 
@@ -12,9 +12,8 @@ RUN set -ex; \
       python \
       python-dev \
       python-setuptools \
+      python-pip \
  && rm -rf /var/lib/apt/lists/*
-
-RUN easy_install pip
 
 RUN pip install --no-cache ansible==$ansible_version
 
