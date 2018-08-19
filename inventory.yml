@@ -1,0 +1,11 @@
+---
+- name: devbox-ubuntu1804
+  box: ubuntu/bionic64
+  check_updates: false
+  net: private_network
+  ip: 10.0.0.1
+  gui: false
+  cpus: 2
+  mem: 2048
+  privileged_scripts:
+    - bin/setup_docker.sh

@@ -42,10 +42,9 @@ sudo apt-get update -q && sudo apt-get install -y \
 
 echo '### add user to "docker" group ###'
 sudo groupadd docker || true
-sudo usermod -aG docker $USER
+sudo usermod -aG docker vagrant
 #sudo DEFAULT_FORWARD_POLICY="DROP" -> "ACCEPT" /etc/default/ufw
 #sudo ufw reload
 #sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 #sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 #sudo update-rc.d docker.io defaults
-
