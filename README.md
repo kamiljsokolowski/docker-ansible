@@ -10,15 +10,15 @@ Ansible Docker images.
 - [Vagrant](https://www.vagrantup.com/downloads.html): 1.9+
 
 ## Available OS platforms
-- Ubuntu: 14.04,16.04    
+- Ubuntu: 18.04    
 *(comming soon)*    
 - *RedHat/CentOS: 6,7*
 - *Windows Sever 2016*
 
 ## Setup build env
-**NOTE**: if running on a machine with Docker already installed, consider setting up Vagrant env as optional 
+**NOTE**: if running on a machine with Docker already installed, consider setting up Vagrant env as optional
 ```
-git clone ssh://git@scm-git-eur.misys.global.ad:7999/md/docker-ansible.git docker-ansible
+git clone <repo_url>/docker-ansible
 cd docker-ansible
 vagrant up
 vagrant ssh
@@ -48,4 +48,4 @@ docker push <registry>/docker-ansible/ansible:ubuntu1604-2.3.0.0
 ```
 
 ## Authors
-Kamil Sokolowski (<kamil.sokolowski@misys.com>)
+Kamil Sokolowski (<kamil.j.sokolowski@gmail.com>)
